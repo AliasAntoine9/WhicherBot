@@ -1,0 +1,200 @@
+version: "2.0"
+
+
+nlu:
+
+# Default
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+
+
+
+# Custom
+- intent: install_whicher
+  examples: |
+    - how can I install whicher?
+    - how to install whicher?
+    - I want to install whicher on my computer.
+    - how to setup whicher?
+    - can you help me to setup whicher?
+    - install whicher
+    - setup whicher
+    - help install whicher
+    - help me install whicher
+    - help me with the installation of whicher
+    - where to find whicher's install?
+    - where is whicher's installer?
+    - where is whicher setup?
+    - where can I find the documentation of whicher?
+    - where is the doc of whicher?
+    - what is whicher?
+    - informations about whicher
+    - the installation of whicher is not working
+    - I have some problem to install whicher.
+    - I can't finish installing whicher.
+    - installation of whicher failed.
+    - I'm stuck with whicher installation.
+    - problems during the setup of whicher
+
+- intent: struggle_whicher
+  examples: |
+    - the documentation is not useful.
+    - Yes I need more help
+    - Yes I want more help
+    - I want more help
+    - I need more help
+    - Yes more help
+    - more help
+    - the documentation of whicher is not sufficient
+
+- intent: what_i_can_do
+  examples: |
+    - What can you do for me?
+    - How can you help me?
+    - What do you do?
+    - Tasks
+    - What tasks can you do?
+    - Can you help me?
+    - capabilities
+
+- intent: hello_world
+  examples: |
+    - baby programer
+    - what's the first sentence?
+
+
+- intent: application
+  examples: |
+    - [whicher] (application)
+    - [bumble] (application)
+    - [tinder] (application)
+
+
+
+#Lookup is a list of values regrouped in one commun entity
+- lookup: application
+  examples: |
+    - whicher
+    - bumble
+    - tinder
+
+
+- synonym: install
+  examples: |
+    - install
+    - instal
+    - installing
+    - set up
+    - setup
+    - settup
+
+- synonym: whicher
+  examples: |
+    - whicher
+    - Whicher
+    - WHICHER
+    - whcr
+
+- synonym: bumble
+  examples: |
+    - bumble
+    - Bumble
+    - BUMBLE
+    - bmbl
+
+- synonym: tinder
+  examples: |
+    - tinder
+    - Tinder
+    - TINDER
+    - Tndr
+
+

@@ -1,0 +1,4 @@
+venv_whicher_bot/
+.idea/
+project_whicher_bot/.idea/
+project_whicher_bot/actions/__pycache__/

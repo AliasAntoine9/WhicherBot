@@ -1,0 +1,85 @@
+version: "2.0"
+
+stories:
+
+# Default
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+# Custom
+
+## Install Whicher
+- story: story_install_whicher
+  steps:
+  - intent: install_whicher
+  - action: utter_install_whicher
+  - action: utter_more_help
+  - intent: install_whicher
+  - action: utter_install_whicher
+  - action: utter_more_help
+
+- story: story_install_whicher_finish
+  steps:
+  - intent: install_whicher
+  - action: utter_install_whicher
+  - action: utter_more_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: story_not_create_github_issue
+  steps:
+  - intent: install_whicher
+  - action: utter_install_whicher
+  - action: utter_more_help
+  - or:
+    - intent: affirm
+    - intent: struggle_whicher
+  - action: utter_ask_create_ticket
+  - intent: deny
+  - action: utter_goodbye
+
+- story: story_create_github_issue
+  steps:
+  - intent: install_whicher
+  - action: utter_install_whicher
+  - action: utter_more_help
+  - or:
+    - intent: affirm
+    - intent: struggle_whicher
+  - action: form_create_github_issue
+  - active_loop: form_create_github_issue
+  - active_loop: null
+  - action: utter_goodbye
+
+
+## What I can do?
+- story: story_what_i_can_do
+  steps:
+  - intent: what_i_can_do
+  - action: utter_iamabot
+  - action: utter_what_i_can_do

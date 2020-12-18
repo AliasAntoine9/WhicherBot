@@ -1,0 +1,95 @@
+version: "2.0"
+
+intents:
+  #Default
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  #Custom
+  - install_whicher
+  - struggle_whicher
+  - what_i_can_do
+
+entities:
+  - application
+
+responses:
+  #Default
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+  - text: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/79d49d48-0e16-4cc0-9e7d-35eb7da1c603/d2emlny-b9b90995-4860-4b71-a315-e8106aeb02c8.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi83OWQ0OWQ0OC0wZTE2LTRjYzAtOWU3ZC0zNWViN2RhMWM2MDMvZDJlbWxueS1iOWI5MDk5NS00ODYwLTRiNzEtYTMxNS1lODEwNmFlYjAyYzguZ2lmIn1dXX0.U45rjIiBhVYwpGEFtU1xTOMsIqHMgNpvZDR0quZl7ps"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  #Custom
+  utter_install_whicher:
+  - text: "Whicher Documentation is here: http://www.dim.uchile.cl/~fmaldonado/Jugo/imagenes/HIMYM/Bro%20Code.pdf \n \n Or here: https://github.com/VTristan/Bumble"
+
+  utter_more_help:
+  - text: "Do you want more help?"
+
+  utter_ask_create_ticket:
+  - text: "Do you want to contact the support team throught a GitHub Issue?"
+
+  utter_what_i_can_do:
+  - text: "I can send you a fake Doc or create an Issue on GitHub"
+
+  utter_acknowledge_deny:
+  - text: "OK, I'm stopping this action."
+
+  utter_ask_sender:
+  - text: "Can you write your email?  Like that I'll be able to send you the Issue."
+
+  utter_ask_summary:
+  - text: "Give a Title to your Issue."
+
+  utter_ask_description:
+  - text: "Can you give more details about your problem?"
+
+session_config:
+  #Default
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+config:
+  store_entities_as_slots: true
+
+actions:
+  - action_hello_world
+  - form_create_github_issue
+
+forms:
+  - form_create_github_issue:
+    sender:
+      type: from_text
+
+slots:
+  requested_slot:
+    type: text
+    influence_conversation: false
+  sender:
+    type: text
+    influence_conversation: false
+  summary:
+    type: text
+    influence_conversation: false
+  description:
+    type: text
+    influence_conversation: false
